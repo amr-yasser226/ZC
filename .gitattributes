@@ -3,3 +3,4 @@
 *.py eol=lf
 *.ipynb eol=lf
 *.csv binary
+*.cs linguist-language=C#
