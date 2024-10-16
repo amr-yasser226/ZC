@@ -28,3 +28,28 @@ pyvenv.cfg
 
 # Ignore Visual Studio temporary files
 .vs/
+*.suo
+*.user
+*.rsuser
+*.userosscache
+*.sln.docstates
+
+# Ignore build results
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore Visual Studio auto-generated debug/release folders
+**/bin/
+**/obj/
+
+# Ignore Backup and temp files
+*.bak
+*.tmp
+*.log
+*.swp
+
+# Ignore compiled C# binaries
+*.dll
+*.exe
