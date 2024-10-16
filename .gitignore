@@ -1,0 +1,27 @@
+# Ignore virtual environment folder
+venv/
+
+# Ignore Python cache files and compiled bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore data files (if you don't want to track them)
+data/*.csv
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and other temporary files
+*.log
+*.tmp
+*.out
+
+# Ignore the pyvenv configuration file for venv (optional)
+pyvenv.cfg
