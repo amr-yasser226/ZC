@@ -1,10 +1,5 @@
-# Normalize all text files to LF
 * text=auto
-
-# Explicitly set certain file types to use LF (for scripts, config files, etc.)
 *.sh eol=lf
 *.py eol=lf
 *.ipynb eol=lf
-
-# Set CSV and other data files to retain the original line endings
 *.csv binary
