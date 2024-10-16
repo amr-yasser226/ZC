@@ -25,3 +25,6 @@ Thumbs.db
 
 # Ignore the pyvenv configuration file for venv (optional)
 pyvenv.cfg
+
+# Ignore Visual Studio temporary files
+.vs/
