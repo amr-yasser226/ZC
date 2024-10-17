@@ -9,7 +9,7 @@ __pycache__/
 **/.ipynb_checkpoints/
 
 # Ignore VS Code settings folder
-.vscode/
+**/.vscode/
 
 # Ignore data files (if you don't want to track them)
 data/*.csv
@@ -27,7 +27,7 @@ Thumbs.db
 pyvenv.cfg
 
 # Ignore Visual Studio temporary files
-.vs/
+**/.vs/
 *.suo
 *.user
 *.rsuser
