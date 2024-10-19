@@ -56,3 +56,5 @@ Release/
 # Ignore compiled C# binaries
 *.dll
 *.exe
+
+Data Base/
