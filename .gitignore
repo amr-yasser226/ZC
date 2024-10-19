@@ -1,4 +1,5 @@
 # Ignore virtual environment folder
+venv/env/
 venv/
 
 # Ignore Python cache files and compiled bytecode
@@ -6,7 +7,7 @@ __pycache__/
 *.py[cod]
 
 # Ignore Jupyter Notebook checkpoints
-**/.ipynb_checkpoints/
+.ipynb_checkpoints/
 
 # Ignore VS Code settings folder
 **/.vscode/
