@@ -1,6 +1,17 @@
+# Enable auto-detection of line endings
 * text=auto
+
+# Specific file type handling
 *.sh eol=lf
 *.py eol=lf
 *.ipynb eol=lf
 *.csv binary
+
+# Override language detection for specific files
 *.cs linguist-language=C#
+*.py linguist-language=Python
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.cpp linguist-language=C++
+*.java linguist-language=Java
