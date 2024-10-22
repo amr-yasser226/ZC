@@ -4,7 +4,7 @@
 # Specific file type handling
 *.sh eol=lf
 *.py eol=lf linguist-language=Python
-*.ipynb eol=lf linguist-detectable=false  # Reduce Jupyter Notebooks' impact on language detection
+*.ipynb eol=lf linguist-detectable=true  # Include Jupyter Notebooks but reduce their impact
 *.csv binary
 *.cs linguist-language=C#
 *.cpp linguist-language=C++
@@ -15,4 +15,5 @@
 *.json linguist-language=JSON
 *.xml linguist-language=XML
 
-# Treat Jupyter Notebooks as less significant for language detection
+# Reduce Jupyter Notebooks' dominance
+*.ipynb linguist-vendored=true
