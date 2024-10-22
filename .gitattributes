@@ -4,7 +4,7 @@
 # Specific file type handling
 *.sh eol=lf
 *.py eol=lf linguist-language=Python
-*.ipynb eol=lf  # Include Jupyter Notebooks without any extra rules
+*.ipynb eol=lf linguist-language=Jupyter  # Force recognition of Jupyter Notebooks
 *.csv binary
 *.cs linguist-language=C#
 *.cpp linguist-language=C++
