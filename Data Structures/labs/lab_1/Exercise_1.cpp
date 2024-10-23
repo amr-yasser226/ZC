@@ -45,6 +45,7 @@ public:
         return id;
     }
 
+    // Member function (Method)
     void PrintInfo()
     {
         cout << "Student Name: " << name << endl;
@@ -58,6 +59,7 @@ private:
     int year;
 
 public:
+    // Non-default constructor
     Graduate(int graduateYear)
     {
         /* There is two ways to check the year validation
@@ -81,6 +83,8 @@ public:
             year = 0;
         }
     }
+
+    // Member function (Method)
     void PrintInfo()
     {
         if (year == 0)
@@ -91,6 +95,51 @@ public:
         {
             cout << "Student Graduation Year: " << year << endl;
         }
+    }
+};
+
+class Undergraduate
+{
+private:
+    int year;
+
+public:
+    // Non-default constructor
+    Undergraduate(int current_year)
+    {
+        if (current_year < 1 || current_year > 4)
+        {
+            cout << "Error: Invalid current year." << endl;
+            year = 1;
+        }
+        else
+        {
+            year = current_year;
+        }
+    }
+
+    // Getters
+    int getYear() const
+    {
+        return year;
+    }
+
+    bool Pass()
+    {
+        year++;
+        if (year >= 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void PrintInfo() const
+    {
+        cout << "Current Year: " << year << endl;
     }
 };
 
