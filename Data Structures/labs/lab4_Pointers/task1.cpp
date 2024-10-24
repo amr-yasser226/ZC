@@ -30,7 +30,7 @@ int main()
     // [Q2] What is the value of *P3? and why?
 
     // When you first initialize P3 using P3 = new int; it allocates memory dynamically for an integer, but the value in this newly allocated memory is
-    // not initialized means it doen't have a particular value
+    // not initialized means it doesn't have a particular value
     // the value of *P3 is undefined, meaning it can be any random garbage value that happens to be at the memory location allocated by new int
     // when you print *P3, you will get a garbage value
 
