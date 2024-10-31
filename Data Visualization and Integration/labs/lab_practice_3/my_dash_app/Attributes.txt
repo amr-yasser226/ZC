@@ -1,0 +1,164 @@
+1. hotel
+
+    Description: Identifies the hotel type (resort or city).
+    Use: Use this to compare booking trends, cancellation rates, and stay patterns across hotel types.
+
+2. is_canceled
+
+    Description: Indicates if a booking was canceled (1) or completed (0).
+    Use: Key variable for analyzing cancellation rates, identifying factors that influence cancellations, and segmenting data for insights on retention.
+
+3. lead_time
+
+    Description: The number of days between the booking date and arrival.
+    Use: Analyze how lead time affects cancellations and guest behavior, possibly influencing last-minute promotions or policies.
+
+4. arrival_date_year
+
+    Description: Year of arrival.
+    Use: Examine yearly trends in bookings and cancellations, accounting for factors like seasonal demand or external events.
+
+5. arrival_date_month
+
+    Description: Month of arrival.
+    Use: Identify seasonal trends in bookings and cancellations, which can help in capacity planning and targeted marketing campaigns.
+
+6. arrival_date_week_number
+
+    Description: Week of the year for arrival.
+    Use: Study peak weeks, potentially identifying vacation periods, holidays, or event-related demand.
+
+7. arrival_date_day_of_month
+
+    Description: Day of arrival.
+    Use: Useful for analyzing intra-month demand fluctuations.
+
+8. stays_in_weekend_nights
+
+    Description: Number of weekend nights (Saturday, Sunday) booked or stayed.
+    Use: Compare weekend vs. weekday preferences, helping to identify guest preferences or targeted weekend promotions.
+
+9. stays_in_week_nights
+
+    Description: Number of weekday nights (Monday–Friday) booked or stayed.
+    Use: Use this with weekend stays to analyze average length of stays and patterns, useful for weekday vs. weekend pricing strategies.
+
+10. adults
+
+    Description: Number of adults in a booking.
+    Use: Understand party size to design customized experiences for different group sizes and identify patterns in booking preferences.
+
+11. children
+
+    Description: Number of children in a booking.
+    Use: Analyze family bookings and cancellation rates, aiding in targeted family-oriented promotions or amenities.
+
+12. babies
+
+    Description: Number of babies in a booking.
+    Use: Study family-oriented demand, which might guide amenities or services like cribs, high chairs, or babysitting.
+
+13. meal
+
+    Description: Meal type, e.g., Bed & Breakfast (BB).
+    Use: Segment preferences based on meal plans, identifying trends in meal demand and optimizing offerings accordingly.
+
+14. country
+
+    Description: Guest's country of origin.
+    Use: Insights into international vs. domestic demand and tailoring offers or marketing to major guest regions.
+
+15. market_segment
+
+    Description: Booking source, e.g., Travel Agents (TA) or Tour Operators (TO).
+    Use: Assess how market segments affect cancellations or booking behavior, aiding in strategic alliances or commission optimization.
+
+16. distribution_channel
+
+    Description: Channel used for booking, e.g., Travel Agents (TA) or Tour Operators (TO).
+    Use: Identify popular channels and examine the effect of each on cancellations and retention.
+
+17. is_repeated_guest
+
+    Description: Indicates if the guest is a repeat visitor (1) or first-time guest (0).
+    Use: Analyze repeat guest loyalty, booking patterns, and if they are less likely to cancel.
+
+18. previous_cancellations
+
+    Description: Number of previously canceled bookings by the guest.
+    Use: Understand if previous cancellation history predicts future cancellations, helping to manage booking risks.
+
+19. previous_bookings_not_canceled
+
+    Description: Number of previous successful bookings without cancellations.
+    Use: Indicator of reliable guests, potentially influencing loyalty programs or preferential policies.
+
+20. reserved_room_type
+
+    Description: Code for the reserved room type.
+    Use: Study guest preferences by room type to optimize inventory allocation and pricing.
+
+21. assigned_room_type
+
+    Description: Code for the assigned room type, which may differ due to operational reasons.
+    Use: Examine mismatches in reserved vs. assigned rooms, which could impact guest satisfaction or upsell opportunities.
+
+22. booking_changes
+
+    Description: Number of modifications made to the booking.
+    Use: Analyze if frequent changes correlate with cancellations or guest dissatisfaction, providing insight into flexibility requirements.
+
+23. deposit_type
+
+    Description: Type of deposit—No Deposit, Non-Refund, or Refundable.
+    Use: Assess if deposit types impact cancellations or guest commitment, helping to design suitable payment policies.
+
+24. agent
+
+    Description: ID of the travel agency managing the booking.
+    Use: Understand agency performance and cancellation rates, possibly leading to a review of agency partnerships.
+
+25. company
+
+    Description: ID of the company responsible for booking or payment.
+    Use: Segment corporate bookings and their patterns, providing insight for corporate sales strategies.
+
+26. days_in_waiting_list
+
+    Description: Days a booking was on the waiting list before confirmation.
+    Use: Gauge demand surges and their effect on waiting periods, potentially revising inventory management.
+
+27. customer_type
+
+    Description: Classification of the booking as Group, Transient, or Transient-Party.
+    Use: Study customer-type preferences and behaviors, helping to refine segmentation strategies and offerings.
+
+28. adr (Average Daily Rate)
+
+    Description: Average daily rate, calculated as the total lodging revenue divided by staying nights.
+    Use: Track revenue trends by ADR, aiding pricing decisions and revenue management.
+
+29. required_car_parking_spaces
+
+    Description: Number of parking spaces needed by the guest.
+    Use: Plan for parking resource allocation and identify demand for parking-related services.
+
+30. total_of_special_requests
+
+    Description: Number of special requests made (e.g., twin bed, high floor).
+    Use: Assess if higher special requests correlate with cancellations and guide service responsiveness.
+
+31. reservation_status
+
+    Description: Booking status—Check-Out, No-Show, or Canceled.
+    Use: Measure outcomes and their timing, critical for operational and financial planning.
+
+32. reservation_status_date
+
+    Description: Date when the reservation status was last updated.
+    Use: Track booking life cycles, especially cancellations, and evaluate timing’s impact on operations.
+
+33. name, email, phone-number
+
+    Description: Guest's name, email, and phone (not real data, possibly anonymized).
+    Use: Primarily for anonymized analysis; not critical for operational insights.
