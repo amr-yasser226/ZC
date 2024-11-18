@@ -31,7 +31,7 @@ lab_practice_3/
 ### Clone the Repository:
 
 ```bash
-git clone https://github.com/amr-yasser226/lab_practice_3.git
+git clone https://github.com/amr-yasser226/ZC/Data Visualization and Integration/labs/lab_practice_3.git
 cd lab_practice_3
 ```
 
