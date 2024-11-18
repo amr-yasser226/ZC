@@ -59,7 +59,6 @@ Release/
 *.exe
 
 Data Base/
-lab_prectice_1/
 
-data/hotel_bookings.csv
-data/cleaned_hotel_bookings.csv
+lab_practice_3/my_dash_app/data/hotel_bookings.csv
+lab_practice_3/my_dash_app/data/cleaned_hotel_bookings.csv
