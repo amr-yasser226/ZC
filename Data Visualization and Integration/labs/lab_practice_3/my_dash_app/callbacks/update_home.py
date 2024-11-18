@@ -2,7 +2,6 @@ from dash import Input, Output
 import plotly.express as px
 
 def register_callbacks(app, df):
-    # Original callback for booking trends
     @app.callback(
         Output('booking-trends', 'figure'),
         []
@@ -27,7 +26,6 @@ def register_callbacks(app, df):
         )
         return fig
 
-    # Callback for lead time analysis
     @app.callback(
         Output('lead-time-analysis', 'figure'),
         []
@@ -43,7 +41,6 @@ def register_callbacks(app, df):
         )
         return fig
 
-    # Add callbacks for the other graphs similarly
     @app.callback(
         Output('special-requests-correlation', 'figure'),
         []
@@ -59,6 +56,3 @@ def register_callbacks(app, df):
             color='is_canceled'
         )
         return fig
-
-    # Continue adding callbacks for other graphs (e.g., repeated guest analysis, market segment, etc.)
-
