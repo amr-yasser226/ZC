@@ -3,9 +3,9 @@
 This project is a comprehensive data visualization tool built using Dash and Plotly. It analyzes hotel booking data to reveal trends in booking cancellations, customer behavior, demographics, and more.
 
 ---
-```markdown
-## Project Structure
 
+## Project Structure
+```markdown
 ```plaintext
 lab_practice_3/
 │
