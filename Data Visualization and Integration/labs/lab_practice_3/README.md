@@ -1,10 +1,9 @@
-```markdown
 # Hotel Booking Analysis Dashboard
 
 This project is a comprehensive data visualization tool built using Dash and Plotly. It analyzes hotel booking data to reveal trends in booking cancellations, customer behavior, demographics, and more.
 
 ---
-
+```markdown
 ## Project Structure
 
 ```plaintext
