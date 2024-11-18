@@ -1,4 +1,3 @@
-```markdown
 # Hotel Booking Analysis Dashboard
 
 This project is a comprehensive data visualization tool built using Dash and Plotly. It analyzes hotel booking data to reveal trends in booking cancellations, customer behavior, demographics, and more.
@@ -106,9 +105,3 @@ The dataset contains information on hotel bookings, such as hotel type, lead tim
 - Dataset Source: [Specify the source of your dataset]
 - Libraries: Dash, Plotly, Pandas, NumPy, Matplotlib
 ```
-
-### Key Formatting Changes:
-- **Horizontal Lines**: Added horizontal lines (`---`) to clearly separate sections.
-- **Section Headings**: Used `##` and `###` to define clear headings and subheadings.
-- **Code Blocks**: Used triple backticks (```) for command-line instructions and the project structure.
-- **Spacing**: Added extra spaces between sections for better readability.
