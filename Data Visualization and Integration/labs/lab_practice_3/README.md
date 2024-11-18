@@ -21,8 +21,7 @@ lab_practice_3/
 │   └── requirements.txt   # List of required Python packages
 ├── .gitignore             # Specifies files and folders to ignore in Git
 └── README.md              # Project documentation
-
----
+##
 
 Installation and Setup
 Clone the Repository:
