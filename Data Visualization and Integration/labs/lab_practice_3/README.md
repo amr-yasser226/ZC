@@ -21,6 +21,9 @@ lab_practice_3/
 │   └── requirements.txt   # List of required Python packages
 ├── .gitignore             # Specifies files and folders to ignore in Git
 └── README.md              # Project documentation
+
+---
+
 Installation and Setup
 Clone the Repository:
 
@@ -71,5 +74,3 @@ Dataset Source: [Specify the source of your dataset]
 Libraries: Dash, Plotly, Pandas, NumPy, Matplotlib
 yaml
 Copy code
-
----
