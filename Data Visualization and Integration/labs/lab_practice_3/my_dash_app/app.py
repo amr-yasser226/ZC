@@ -1,9 +1,14 @@
+import os
 import pandas as pd
 from dash import Dash, html, dcc
 import plotly.express as px
 
-# Load and clean the data
-df = pd.read_csv("data/hotel_bookings.csv")
+full_data_path = "data/hotel_bookings.csv"
+sample_data_path = "data/sample_hotel_bookings.csv"
+
+data_path = full_data_path if os.path.exists(full_data_path) else sample_data_path
+
+df = pd.read_csv(data_path)
 df['reservation_status_date'] = pd.to_datetime(df['reservation_status_date'])
 df['total_nights'] = df['stays_in_weekend_nights'] + df['stays_in_week_nights']
 df['children'] = df['children'].fillna(0)
@@ -15,7 +20,6 @@ df['adults'] = df['adults'].apply(lambda x: 5 if x > 5 else x)
 df['children'] = df['children'].apply(lambda x: 3 if x > 3 else x)
 df['babies'] = df['babies'].apply(lambda x: 3 if x > 3 else x)
 
-# Original Visualizations
 aggregated_df = df.groupby([df['reservation_status_date'].dt.to_period('M')]).size().reset_index(name='count')
 aggregated_df['reservation_status_date'] = aggregated_df['reservation_status_date'].dt.to_timestamp()
 aggregated_df = aggregated_df.sort_values(by='reservation_status_date')
@@ -69,16 +73,12 @@ fig_market_segment = px.bar(
     color='market_segment'
 )
 
-# Room Type Analysis with Annotations
 reserved_room_counts = df['reserved_room_type'].value_counts().reset_index()
 reserved_room_counts.columns = ['Room Type', 'Reserved Count']
 assigned_room_counts = df['assigned_room_type'].value_counts().reset_index()
 assigned_room_counts.columns = ['Room Type', 'Assigned Count']
 
-# Merge the counts into a single DataFrame
 room_type_counts = pd.merge(reserved_room_counts, assigned_room_counts, on='Room Type', how='outer').fillna(0)
-
-# Highlight bars for rare room types
 highlighted_room_types = ['L', 'P', 'I', 'K']  # These are the rare room types
 
 fig_room_type_comparison = px.bar(
@@ -89,8 +89,6 @@ fig_room_type_comparison = px.bar(
     labels={'value': 'Number of Reservations/Assignments', 'Room Type': 'Room Type'},
     barmode='group'
 )
-
-# Add annotations for rare room types
 for room_type in highlighted_room_types:
     if room_type in room_type_counts['Room Type'].values:
         reserved_count = room_type_counts.loc[room_type_counts['Room Type'] == room_type, 'Reserved Count'].values[0]
@@ -103,7 +101,6 @@ for room_type in highlighted_room_types:
             arrowhead=2
         )
 
-# New: Refined Country Visualizations
 country_counts = df['country'].value_counts().reset_index()
 country_counts.columns = ['Country', 'Count']
 top_countries = country_counts.head(15)
@@ -130,7 +127,6 @@ fig_medium_countries = px.bar(
     labels={'Count': 'Number of Guests', 'Country': 'Country'}
 )
 
-# New: Analysis of Cancellations by Number of Children and Babies
 children_babies_cancellation = df.groupby(['children', 'babies'])['is_canceled'].mean().reset_index()
 children_babies_cancellation.columns = ['Children', 'Babies', 'Cancellation Rate']
 
@@ -144,7 +140,6 @@ fig_children_babies = px.bar(
     labels={'Cancellation Rate': 'Cancellation Rate', 'Children': 'Number of Children', 'Babies': 'Number of Babies'}
 )
 
-# New: Demand for Car Parking Spaces by Customer Type
 car_parking_demand = df.groupby('customer_type')['required_car_parking_spaces'].mean().reset_index()
 car_parking_demand.columns = ['Customer Type', 'Average Car Parking Spaces']
 
@@ -157,10 +152,7 @@ fig_car_parking = px.bar(
     color='Customer Type'
 )
 
-# Initialize the Dash app
 app = Dash(__name__)
-
-# Layout with all graphs
 app.layout = html.Div([
     html.H1("Hotel Booking Analysis Dashboard"),
     dcc.Graph(id='booking-trends', figure=fig_booking_trends),
