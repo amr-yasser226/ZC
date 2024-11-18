@@ -60,3 +60,6 @@ Release/
 
 Data Base/
 lab_prectice_1/
+
+data/hotel_bookings.csv
+data/cleaned_hotel_bookings.csv
