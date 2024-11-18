@@ -1,7 +1,3 @@
-Here's the updated and comprehensive `README.md` file for your project, reflecting the use of both the full and sample datasets, as well as the added sample generation script.
-
----
-
 ```markdown
 # Hotel Booking Analysis Dashboard
 
@@ -137,11 +133,3 @@ The dashboard includes the following visualizations:
 - Dataset Source:
 - Libraries: Dash, Plotly, Pandas, NumPy, Matplotlib
 ```
-
-### Key Points:
-- **Clear Instructions**: The `README.md` explains how to run the app with both the full and sample datasets.
-- **Sample Generation**: Instructions on how to generate a sample dataset are included.
-- **Project Structure**: The structure of the project is clearly outlined.
-- **Usage Details**: Users are informed about the fallback logic and how the data will be processed.
-
-This `README.md` provides comprehensive and professional documentation for your project, ensuring that users can easily set up and run your application. Let me know if you need any further customization!
