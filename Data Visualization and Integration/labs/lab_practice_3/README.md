@@ -6,7 +6,6 @@ This project is a comprehensive data visualization tool built using Dash and Plo
 
 ## Project Structure
 ```plaintext
-```markdown
 lab_practice_3/
 │
 ├── my_dash_app/           # Main application folder
