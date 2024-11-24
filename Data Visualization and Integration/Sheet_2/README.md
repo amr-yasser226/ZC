@@ -147,4 +147,3 @@ env/
 
 - **Libraries:** Dash, Plotly, Pandas, Dash Bootstrap Components
 - **Dataset:** User-provided `books.csv`
-```
