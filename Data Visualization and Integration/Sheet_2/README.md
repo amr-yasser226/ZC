@@ -1,8 +1,3 @@
-You're correct in deciding to ignore the `__MACOSX` folder—it is not essential to the functionality of your application. It's a system-generated folder that appears when files are zipped on macOS. It can safely be excluded from your project using a `.gitignore` file.
-
-Below is your updated and well-organized `README.md`, inspired by the example you provided:
-
-```markdown
 # Book Sales Analysis Dashboard
 
 This project is an interactive data visualization tool built using Dash and Plotly. It allows users to analyze book sales data to uncover trends and insights. The dashboard includes interactive tables and charts to support data-driven decision-making.
