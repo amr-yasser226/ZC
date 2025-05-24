@@ -1,4 +1,4 @@
-# Data Governance Course Podcasts
+# Data Governance Course Podcasts "Deep Dive"
 
 > These audio packs were created by [Youssef Mohammed](https://github.com/DEVOLOPER-1) and cover the full concepts of the Data Governance course.
 
