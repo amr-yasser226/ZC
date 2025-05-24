@@ -1,7 +1,3 @@
-*Comprehensive Study Guide*
-
----
-
 ## Table of Contents
 
 1. [Access Control Lists & Capability Lists](#access-control-lists--capability-lists)
