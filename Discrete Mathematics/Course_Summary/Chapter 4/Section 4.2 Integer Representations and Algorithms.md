@@ -31,9 +31,7 @@ $$(10101111)_2 = 1\cdot2^7 + 0\cdot2^6 + 1\cdot2^5 + \cdots + 1\cdot2^0 = 175.$$
 To compute the base-\(b\) digits of \(n\in\mathbb{N}\):
 
 1. Set  
-   $$
-   q := n,\quad k := 0.
-   $$
+   $$q := n,\quad k := 0.$$
 2. While \(q \neq 0\):  
    $$
    a_k := q \bmod b,\quad
