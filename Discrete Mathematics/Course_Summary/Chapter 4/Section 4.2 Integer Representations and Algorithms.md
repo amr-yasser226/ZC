@@ -33,11 +33,9 @@ To compute the base-\(b\) digits of \(n\in\mathbb{N}\):
 1. Set  
    $$q := n,\quad k := 0.$$
 2. While \(q \neq 0\):  
-   $$
-   a_k := q \bmod b,\quad
+   $$a_k := q \bmod b,\quad
    q   := \big\lfloor \tfrac{q}{b}\big\rfloor,\quad
-   k   := k + 1.
-   $$
+   k   := k + 1.$$
 3. Then the digits are \((a_{k-1},\dots,a_0)\), giving \((a_{k-1}\dots a_0)_b\).
 
 **Example.**  
@@ -67,21 +65,17 @@ The remainders read bottom‐up give \((30071)_8\).
 
 Given two \(n\)-bit binary numbers
 
-$$
-a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2,
-$$
+$$a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2,$$
 
 compute their sum \(s = (s_n s_{n-1}\dots s_0)_2\):
 
 1. Initialize carry \(c := 0\).  
 2. For \(j=0,1,\dots,n-1\):  
-   $$
-   \begin{aligned}
+   $$\begin{aligned}
    d   &:= \left\lfloor\frac{a_j + b_j + c}{2}\right\rfloor,\\
    s_j &:= (a_j + b_j + c) - 2\,d,\\
    c   &:= d.
-   \end{aligned}
-   $$
+   \end{aligned}$$
 3. Set \(s_n := c\).
 
 > **Complexity:** \(O(n)\) bit-additions.
@@ -95,13 +89,11 @@ compute their sum \(s = (s_n s_{n-1}\dots s_0)_2\):
 To multiply two \(n\)-bit integers \(a\) and \(b\):
 
 1. For each \(j=0,1,\dots,n-1\), form the partial product  
-   $$
-   c_j :=
+   $$c_j :=
    \begin{cases}
      a \ll j, & b_j = 1,\\
      0,       & b_j = 0.
-   \end{cases}
-   $$
+   \end{cases}$$
 2. Sum all \(c_j\) to obtain the product.
 
 > **Complexity:** \(O(n^2)\) bit-additions.
