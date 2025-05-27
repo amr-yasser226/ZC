@@ -43,7 +43,7 @@ $$
 ### Definition
 For $a,b\in\mathbb{Z}$, not both zero,  
 $$
-\gcd(a,b) = \max\{d>0 : d\mid a \;
+\gcd(a,b) = \max\{d>0 : d\mid a;
 $$
 
 $$
