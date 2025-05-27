@@ -32,28 +32,28 @@ $$
 
 **Procedure 4.2.2 (Conversion to Base - $b$).** Given $n\in\mathbb{N}$ and $b>1$, compute its base - $b$ representation.
 
-1. **Initialize**
+**Initialize**
 
-   $$
-   q \leftarrow n,
-   \quad k \leftarrow 0
-   $$
+$$
+q \leftarrow n,
+\quad k \leftarrow 0
+$$
 
-2. **Repeat** while $q \neq 0$:
+**Repeat** while $q \neq 0$:
 
-   $$
-   \begin{aligned}
-   a_k &\leftarrow q \bmod b,\\
-   q   &\leftarrow \left\lfloor\tfrac{q}{b}\right\rfloor,\\
-   k   &\leftarrow k + 1
-   \end{aligned}
-   $$
+$$
+\begin{aligned}
+a_k &\leftarrow q \bmod b,\\
+q   &\leftarrow \left\lfloor\tfrac{q}{b}\right\rfloor,\\
+k   &\leftarrow k + 1
+\end{aligned}
+$$
 
-3. **Result:** The digits are $(a_{k-1},a_{k-2},\dots,a_1,a_0)$, so
+**Result:** The digits are $(a_{k-1},a_{k-2},\dots,a_1,a_0)$, so
 
-   $$
-   n = (a_{k-1} a_{k-2} \dots a_1 a_0)_b
-   $$
+$$
+n = (a_{k-1} a_{k-2} \dots a_1 a_0)_b
+$$
 
 **Example.** Convert $12345_{10}$ to octal ($b=8$). We compute:
 
