@@ -85,7 +85,9 @@ $$
 
 Let
 
-$$a = (a_{n-1} a_{n-2} \dots a_0)_2, \quad b = (b_{n-1} b_{n-2} \dots b_0)_2.$$
+ $$
+ a = (a_{n-1} a_{n-2} \dots a_0)_2, \quad b = (b_{n-1} b_{n-2} \dots b_0)_2.
+ $$
 
 To compute $s = a + b$:
 
