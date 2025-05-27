@@ -1,162 +1,141 @@
-# 4.2 Base – $b$ Expansions and Integer Algorithms
+## 4.1.1 Divisibility
 
-## 4.2.1 Base-$b$ Expansions
+**Definition 4.1.1**
 
-**Theorem 4.2.1 (Uniqueness of Base-$b$ Expansion)**  
-Let $b>1$ be an integer.  Every positive integer $n$ can be written uniquely as
+Let $a,b\in\mathbb{Z}$ with $a\neq0$. We say **“$a$ divides $b$”**, written
 
-```text
-n = aₖ·bᵏ + aₖ₋₁·bᵏ⁻¹ + … + a₁·b + a₀
-````
+$$a\mid b$$
 
-where each digit
+if there exists $c\in\mathbb{Z}$ such that
 
-```text
-aᵢ ∈ {0,1,…,b−1},   aₖ ≠ 0.
-```
+$$b=a\,c.$$
 
-We denote this by
+- In that case, $a$ is a **factor** (or **divisor**) of $b$, and $b$ is a **multiple** of $a$.
+- If no such $c$ exists, we write $a\nmid b$.
+- Equivalently,
 
-```text
-n = (aₖ aₖ₋₁ … a₁ a₀)₍b₎.
-```
-
-* **Binary** (\$b=2\$): digits `{0,1}`
-* **Octal** (\$b=8\$): digits `{0,…,7}`
-* **Hexadecimal** (\$b=16\$): digits `{0,…,9,A,…,F}` (A=10,…,F=15)
-
-**Example**
-
-```text
-(10101111)₂ = 1·2⁷ + 0·2⁶ + 1·2⁵ + … + 1·2⁰ = 175
-```
+$$a\mid b\quad\Longleftrightarrow\quad\frac{b}{a}\in\mathbb{Z}.$$
 
 ---
 
-## 4.2.2 Base Conversion Algorithm
+**Theorem 4.1.2 (Basic Properties of Divisibility)**
 
-**Procedure 4.2.2**
-To compute the base-\$b\$ digits of \$n∈ℕ\$:
+Let $a,b,c\in\mathbb{Z}$ with $a\neq0$. Then:
 
-1. ```text
-   q = n
-   k = 0
-   ```
-2. While `q ≠ 0` do:
+1. If $a\mid b$ and $a\mid c$, then $a\mid(b+c)$.  
+2. If $a\mid b$, then for any $k\in\mathbb{Z}$, $a\mid(b\,k)$.  
+3. If $a\mid b$ and $b\mid c$, then $a\mid c$.
 
-   ```text
-   aₖ = q mod b
-   q  = floor(q / b)
-   k += 1
-   ```
-3. The digits are then `(aₖ₋₁,…,a₀)`, i.e.
+**Corollary 4.1.3**
 
-   ```text
-   n = (aₖ₋₁ … a₀)₍b₎.
-   ```
+If $a\mid b$ and $a\mid c$, then for all $m,n\in\mathbb{Z}$,
 
-**Example** (12345₁₀ → octal):
-
-```text
-12345 = 8·1543 + 1  
-1543  = 8·192  + 7  
-192   = 8·24   + 0  
-24    = 8·3    + 0  
-3     = 8·0    + 3  
-
-⇒ (30071)₈
-```
-
-> **Remark.**
-> To convert between binary and octal/hex, group binary bits in blocks of 3 (for octal) or 4 (for hex), padding with leading zeros.
+$$a\bigl\vert(m\,b+n\,c)\bigr..$$
 
 ---
 
-## 4.2.3 Algorithms for Integer Operations
+## 4.1.2 The Division Algorithm
 
-### 4.2.3.1 Binary Addition
+**Theorem 4.1.4 (Division Algorithm)**
 
-**Procedure 4.2.3**
-Given two *n*-bit numbers
+For any $a\in\mathbb{Z}$ and any positive integer $d$, there exist **unique** integers $q$ (quotient) and $r$ (remainder) such that
 
-```text
-a = (aₙ₋₁ … a₀)₂   and   b = (bₙ₋₁ … b₀)₂,
-```
+$$
+\begin{aligned}
+a&=d\,q+r,\\
+0&\le r<d.
+\end{aligned}
+$$
 
-we want
+We adopt the notation
 
-```text
-s = (sₙ sₙ₋₁ … s₀)₂ = a + b.
-```
+$$q:=\big\lfloor\frac{a}{d}\big\rfloor,\quad r:=a\bmod d,$$
 
-1. Initialize
+so that $a=d\,q+r$ with $0\le r<d$.
 
-   ```text
-   c = 0   (carry)
-   ```
-2. For `j = 0` to `n−1`:
-
-   ```text
-   d   = floor((a_j + b_j + c) / 2)
-   s_j = (a_j + b_j + c) − 2·d
-   c   = d
-   ```
-3. Finally set
-
-   ```text
-   sₙ = c
-   ```
-
-**Complexity:** O(n) bit-adds
+**Examples.**  
+1. $q=\lfloor101/11\rfloor=9,\quad r=101\bmod11=2$.  
+2. $q=\lfloor-11/3\rfloor=-4,\quad r=(-11)\bmod3=1$.
 
 ---
 
-### 4.2.3.2 Binary Multiplication
+## 4.1.3 Congruence and Modular Arithmetic
 
-**Procedure 4.2.4**
-To multiply two *n*-bit integers `a` and `b`:
+### 4.1.3.1 Congruence Relation
 
-1. For each `j = 0…n−1`, form partial product
+**Definition 4.1.5**
 
-   ```text
-   c_j = if b_j = 1 then (a << j) else 0
-   ```
-2. Sum all `c_j` to obtain `a·b`.
+Let $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$. We say
 
-**Complexity:** O(n²) bit-adds
+$$a\equiv b\pmod m$$
+
+if
+
+$$m\mid(a-b).$$
+
+Otherwise $a\not\equiv b\pmod m$. Equivalently, $a$ and $b$ have the same remainder upon division by $m$.
+
+**Theorem 4.1.6 (Characterization)**
+
+$a\equiv b\pmod m$ if and only if there exists $k\in\mathbb{Z}$ such that
+
+$$a=b+k\,m.$$
+
+**Theorem 4.1.7 (Remainder Characterization)**
+
+For $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$,
+
+$$a\equiv b\pmod m\quad\Longleftrightarrow\quad(a\bmod m)=(b\bmod m).$$
 
 ---
 
-### 4.2.3.3 Binary Modular Exponentiation
+### 4.1.3.2 Operations on Congruences
 
-**Goal.** Compute
+**Theorem 4.1.8**
 
-```text
-bⁿ mod m
-```
+If
 
-efficiently.
+$$a\equiv b\pmod m\quad\text{and}\quad c\equiv d\pmod m,$$
 
-**Idea.** Write `n` in binary
+then
 
-```text
-n = (aₖ₋₁ … a₀)₂ = Σ (a_j·2^j).
-```
+$$a+c\equiv b+d\pmod m,\quad a\,c\equiv b\,d\pmod m.$$
 
-Then
+**Corollaries.**
 
-```text
-bⁿ = Π_{j: a_j=1} (b^(2^j))  mod m,
-```
+- For any $k\in\mathbb{Z}$:  
+  $$k\,a\equiv k\,b\pmod m,\quad a+k\equiv b+k\pmod m.$$
+- **Caution:** Division is not generally valid; e.g.  
+  $14\equiv8\pmod6$ but dividing by 2 gives $7\not\equiv4\pmod6$.
 
-reducing modulo `m` after each square/multiply.
+**Computing Remainders.**
 
-**Complexity:** O((log m)² · log n) bit-operations
+$$
+\begin{aligned}
+(a+b)\bmod m&=\bigl[(a\bmod m)+(b\bmod m)\bigr]\bmod m,\\
+(a\,b)\bmod m&=\bigl[(a\bmod m)\,(b\bmod m)\bigr]\bmod m.
+\end{aligned}
+$$
 
-```
+---
 
-**Why this works on GitHub**  
-- We used plain text and Unicode subscripts/superscripts.  
-- Algorithms live in indented code-blocks so alignment stays perfect.  
-- No `$…$` or `\(...\)` delimiters that GitHub itself won’t render.
-```
+### 4.1.3.3 Arithmetic in $\mathbb{Z}_m$
+
+**Definition 4.1.9**
+
+Let
+
+$$\mathbb{Z}_m:=\{0,1,2,\dots,m-1\}.$$
+
+In $\mathbb{Z}_m$, define
+
+$$a+_m b:=(a+b)\bmod m,\quad a\cdot_m b:=(a\,b)\bmod m.$$
+
+Then $(\mathbb{Z}_m,+_m,\cdot_m)$ is a **commutative ring with unity**.
+
+- **Key Properties.**  
+  • Closure, associativity, commutativity of $+_m,\cdot_m$.  
+  • Identities: $0$ for $+_m$, $1$ for $\cdot_m$.  
+  • Additive inverse of $a$ is $m-a$.  
+  • Distributivity of $\cdot_m$ over $+_m$.  
+  • Multiplicative inverse exists precisely when $\gcd(a,m)=1$.
