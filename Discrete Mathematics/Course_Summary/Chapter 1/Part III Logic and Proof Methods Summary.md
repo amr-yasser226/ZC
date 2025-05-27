@@ -164,15 +164,13 @@ Let $p,q$ be statements.
 
 1. **Even / Odd Integers**
 
-   ```math
-   \[
-   \begin{aligned}
-   n\text{ is even}
-   &\iff \exists\,k\in\mathbb{Z}:\;n = 2k,\\
-   n\text{ is odd}
-   &\iff \exists\,k\in\mathbb{Z}:\;n = 2k + 1.
-   \end{aligned}
-   \]
+**Definition.**  
+An integer _n_ is called **even** if there exists an integer _k_ such that _n = 2k_, and **odd** if there exists an integer _k_ such that _n = 2k + 1_.
+
+```text
+n is even  ⇔  ∃ k ∈ ℤ: n = 2k
+n is odd   ⇔  ∃ k 
+```
 
 2. **Rational Numbers**
 
