@@ -56,9 +56,10 @@ Pairwise relatively prime: $\gcd(a_i,a_j)=1$ for all $i\neq j$.
 
 ### Via Prime Factorization
 If
-$$
-a = \prod_i p_i^{\alpha_i},
-$$
+
+$$a = \prod_i p_i^{\alpha_i}$$
+
+
 
 $$
 b = \prod_i p_i^{\beta_i},
