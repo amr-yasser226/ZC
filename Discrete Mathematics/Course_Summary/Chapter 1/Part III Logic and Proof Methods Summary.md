@@ -174,12 +174,12 @@ n is odd   ⇔  ∃ k
 
 2. **Rational Numbers**
 
-   ```math
-   \[
-   r\in\mathbb{R}\text{ is rational}
-   \iff \exists\,p,q\in\mathbb{Z},\;q\neq0:\;r = \frac{p}{q}.
-   \]
-   ```
+**Definition.**
+A real number r is rational if there exist integers p and q (with q ≠ 0) such that r = p/q.
+
+```text
+r ∈ ℝ is rational  ⇔  ∃ p, q ∈ ℤ, q ≠ 0: r = p/q
+```
 
 3. **Biconditional Proof**
    To show $p↔q$, prove both $p→q$ and $q→p$.
