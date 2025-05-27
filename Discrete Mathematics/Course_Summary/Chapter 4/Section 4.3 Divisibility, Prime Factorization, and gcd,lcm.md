@@ -16,7 +16,10 @@
 Every integer $n>1$ has a unique factorization
 $$
 n = p_1^{e_1}\,p_2^{e_2}\,\cdots\,p_k^{e_k},
-\quad p_1 < p_2 < \cdots < p_k,\; e_i\ge1.
+$$
+
+$$
+p_1 < p_2 < \cdots < p_k,\; e_i\ge1.
 $$
 
 ### Sieve of Eratosthenes
@@ -40,7 +43,11 @@ $$
 ### Definition
 For $a,b\in\mathbb{Z}$, not both zero,  
 $$
-\gcd(a,b) = \max\{d>0 : d\mid a \;\text{and}\; d\mid b\}.
+\gcd(a,b) = \max\{d>0 : d\mid a \;
+$$
+
+$$
+\text{and}\; d\mid b\}.
 $$
 
 ### Relatively Prime
@@ -50,7 +57,10 @@ Pairwise relatively prime: $\gcd(a_i,a_j)=1$ for all $i\neq j$.
 ### Via Prime Factorization
 If
 $$
-a = \prod_i p_i^{\alpha_i},\quad
+a = \prod_i p_i^{\alpha_i},
+$$
+
+$$
 b = \prod_i p_i^{\beta_i},
 $$
 then
