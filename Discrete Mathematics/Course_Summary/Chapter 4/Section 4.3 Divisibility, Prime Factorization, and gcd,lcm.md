@@ -32,9 +32,11 @@ $$
 ### Infinitude of Primes (Euclid’s Proof)
 1. Assume finitely many primes $p_1,\dots,p_n$.  
 2. Let  
-   $$
-   Q = p_1p_2\cdots p_n + 1.
-   $$
+
+$$
+Q = p_1p_2\cdots p_n + 1.
+$$
+
 3. No $p_i$ divides $Q$ (each leaves remainder $1$), so $Q$ or one of its prime factors is new.  
 4. **Therefore**, there are infinitely many primes.
 
