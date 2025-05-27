@@ -1,141 +1,126 @@
-## 4.1.1 Divisibility
+## 4.2.1 Base-\(b\) Expansions
 
-**Definition 4.1.1**
+**Theorem 4.2.1 (Uniqueness of Base-\(b\) Expansion)**
 
-Let $a,b\in\mathbb{Z}$ with $a\neq0$. We say **“$a$ divides $b$”**, written
+Let \(b>1\) be an integer. Every positive integer \(n\) admits a unique expansion
 
-$$a\mid b$$
+$$
+n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0,
+$$
 
-if there exists $c\in\mathbb{Z}$ such that
+where each digit \(a_i\in\{0,1,\dots,b-1\}\) and \(a_k\neq0\). We denote this by
 
-$$b=a\,c.$$
+$$
+n = (a_k a_{k-1} \dots a_1 a_0)_b.
+$$
 
-- In that case, $a$ is a **factor** (or **divisor**) of $b$, and $b$ is a **multiple** of $a$.
-- If no such $c$ exists, we write $a\nmid b$.
-- Equivalently,
+- **Special bases.**  
+  - **Binary** (\(b=2\)): digits \(\{0,1\}\).  
+  - **Octal** (\(b=8\)): digits \(\{0,\dots,7\}\).  
+  - **Hexadecimal** (\(b=16\)): digits \(\{0,\dots,9,A,\dots,F\}\), where \(A=10,\dots,F=15\).
 
-$$a\mid b\quad\Longleftrightarrow\quad\frac{b}{a}\in\mathbb{Z}.$$
-
----
-
-**Theorem 4.1.2 (Basic Properties of Divisibility)**
-
-Let $a,b,c\in\mathbb{Z}$ with $a\neq0$. Then:
-
-1. If $a\mid b$ and $a\mid c$, then $a\mid(b+c)$.  
-2. If $a\mid b$, then for any $k\in\mathbb{Z}$, $a\mid(b\,k)$.  
-3. If $a\mid b$ and $b\mid c$, then $a\mid c$.
-
-**Corollary 4.1.3**
-
-If $a\mid b$ and $a\mid c$, then for all $m,n\in\mathbb{Z}$,
-
-$$a\bigl\vert(m\,b+n\,c)\bigr..$$
+**Example.**  
+$$(10101111)_2 = 1\cdot2^7 + 0\cdot2^6 + 1\cdot2^5 + \cdots + 1\cdot2^0 = 175.$$
 
 ---
 
-## 4.1.2 The Division Algorithm
+## 4.2.2 Base Conversion Algorithm
 
-**Theorem 4.1.4 (Division Algorithm)**
+**Procedure 4.2.2**
 
-For any $a\in\mathbb{Z}$ and any positive integer $d$, there exist **unique** integers $q$ (quotient) and $r$ (remainder) such that
+To compute the base-\(b\) digits of \(n\in\mathbb{N}\):
+
+1. Set  
+   $$
+   q := n,\quad k := 0.
+   $$
+2. While \(q \neq 0\):  
+   $$
+   a_k := q \bmod b,\quad
+   q   := \big\lfloor \tfrac{q}{b}\big\rfloor,\quad
+   k   := k + 1.
+   $$
+3. Then the digits are \((a_{k-1},\dots,a_0)\), giving \((a_{k-1}\dots a_0)_b\).
+
+**Example.**  
+Convert \(12345_{10}\) to octal (\(b=8\)):
 
 $$
 \begin{aligned}
-a&=d\,q+r,\\
-0&\le r<d.
+12345 &= 8\cdot1543 + 1,\\
+1543  &= 8\cdot192  + 7,\\
+192   &= 8\cdot24   + 0,\\
+24    &= 8\cdot3    + 0,\\
+3     &= 8\cdot0    + 3.
 \end{aligned}
 $$
 
-We adopt the notation
+The remainders read bottom‐up give \((30071)_8\).
 
-$$q:=\big\lfloor\frac{a}{d}\big\rfloor,\quad r:=a\bmod d,$$
-
-so that $a=d\,q+r$ with $0\le r<d$.
-
-**Examples.**  
-1. $q=\lfloor101/11\rfloor=9,\quad r=101\bmod11=2$.  
-2. $q=\lfloor-11/3\rfloor=-4,\quad r=(-11)\bmod3=1$.
+> **Remark.** To convert binary ↔ octal or hex, group binary digits in blocks of 3 (octal) or 4 (hex), padding with leading zeros.
 
 ---
 
-## 4.1.3 Congruence and Modular Arithmetic
+## 4.2.3 Algorithms for Integer Operations
 
-### 4.1.3.1 Congruence Relation
+### 4.2.3.1 Binary Addition
 
-**Definition 4.1.5**
+**Procedure 4.2.3**
 
-Let $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$. We say
-
-$$a\equiv b\pmod m$$
-
-if
-
-$$m\mid(a-b).$$
-
-Otherwise $a\not\equiv b\pmod m$. Equivalently, $a$ and $b$ have the same remainder upon division by $m$.
-
-**Theorem 4.1.6 (Characterization)**
-
-$a\equiv b\pmod m$ if and only if there exists $k\in\mathbb{Z}$ such that
-
-$$a=b+k\,m.$$
-
-**Theorem 4.1.7 (Remainder Characterization)**
-
-For $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$,
-
-$$a\equiv b\pmod m\quad\Longleftrightarrow\quad(a\bmod m)=(b\bmod m).$$
-
----
-
-### 4.1.3.2 Operations on Congruences
-
-**Theorem 4.1.8**
-
-If
-
-$$a\equiv b\pmod m\quad\text{and}\quad c\equiv d\pmod m,$$
-
-then
-
-$$a+c\equiv b+d\pmod m,\quad a\,c\equiv b\,d\pmod m.$$
-
-**Corollaries.**
-
-- For any $k\in\mathbb{Z}$:  
-  $$k\,a\equiv k\,b\pmod m,\quad a+k\equiv b+k\pmod m.$$
-- **Caution:** Division is not generally valid; e.g.  
-  $14\equiv8\pmod6$ but dividing by 2 gives $7\not\equiv4\pmod6$.
-
-**Computing Remainders.**
+Given two \(n\)-bit binary numbers
 
 $$
-\begin{aligned}
-(a+b)\bmod m&=\bigl[(a\bmod m)+(b\bmod m)\bigr]\bmod m,\\
-(a\,b)\bmod m&=\bigl[(a\bmod m)\,(b\bmod m)\bigr]\bmod m.
-\end{aligned}
+a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2,
 $$
+
+compute their sum \(s = (s_n s_{n-1}\dots s_0)_2\):
+
+1. Initialize carry \(c := 0\).  
+2. For \(j=0,1,\dots,n-1\):  
+   $$
+   \begin{aligned}
+   d   &:= \left\lfloor\frac{a_j + b_j + c}{2}\right\rfloor,\\
+   s_j &:= (a_j + b_j + c) - 2\,d,\\
+   c   &:= d.
+   \end{aligned}
+   $$
+3. Set \(s_n := c\).
+
+> **Complexity:** \(O(n)\) bit-additions.
 
 ---
 
-### 4.1.3.3 Arithmetic in $\mathbb{Z}_m$
+### 4.2.3.2 Binary Multiplication
 
-**Definition 4.1.9**
+**Procedure 4.2.4**
 
-Let
+To multiply two \(n\)-bit integers \(a\) and \(b\):
 
-$$\mathbb{Z}_m:=\{0,1,2,\dots,m-1\}.$$
+1. For each \(j=0,1,\dots,n-1\), form the partial product  
+   $$
+   c_j :=
+   \begin{cases}
+     a \ll j, & b_j = 1,\\
+     0,       & b_j = 0.
+   \end{cases}
+   $$
+2. Sum all \(c_j\) to obtain the product.
 
-In $\mathbb{Z}_m$, define
+> **Complexity:** \(O(n^2)\) bit-additions.
 
-$$a+_m b:=(a+b)\bmod m,\quad a\cdot_m b:=(a\,b)\bmod m.$$
+---
 
-Then $(\mathbb{Z}_m,+_m,\cdot_m)$ is a **commutative ring with unity**.
+### 4.2.3.3 Binary Modular Exponentiation
 
-- **Key Properties.**  
-  • Closure, associativity, commutativity of $+_m,\cdot_m$.  
-  • Identities: $0$ for $+_m$, $1$ for $\cdot_m$.  
-  • Additive inverse of $a$ is $m-a$.  
-  • Distributivity of $\cdot_m$ over $+_m$.  
-  • Multiplicative inverse exists precisely when $\gcd(a,m)=1$.
+**Goal.** Compute \(b^n \bmod m\) efficiently.
+
+**Idea.** Write the exponent \(n\) in binary: \(n = (a_{k-1}\dots a_0)_2\). Then
+
+$$
+b^n = b^{\sum_j a_j 2^j}
+    = \prod_{a_j=1} b^{2^j},
+$$
+
+reducing modulo \(m\) at each squaring and multiplication.
+
+> **Complexity:** \(O((\log m)^2 \log n)\) bit-operations.
