@@ -78,7 +78,7 @@ $$
 24    &= 8\cdot3    + 0,\\
 3     &= 8\cdot0    + 3.
 \end{aligned}
-
+```
 
 Reading the remainders from bottom to top yields
 
