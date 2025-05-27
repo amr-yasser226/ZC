@@ -157,29 +157,23 @@ $$
 
 ---
 
-### 4.1.3.3 Arithmetic in \(\mathbb{Z}_m\)
+### 4.1.3.3 Arithmetic in $\mathbb{Z}_m$
 
 **Definition 4.1.9**
 
 Let
 
-$$
-\mathbb{Z}_m := \{0,1,2,\dots,m-1\}.
-$$
+$$\mathbb{Z}_m:=\{0,1,2,\dots,m-1\}.$$
 
-In $\mathbb{Z}_m$, the two operations are usually written simply as
+In $\mathbb{Z}_m$, define
 
-$$
-a +_m b := (a + b)\bmod m,
-\qquad
-a \,\cdot_m\, b := (a\,b)\bmod m.
-$$
+$$a+_m b:=(a+b)\bmod m,\quad a\cdot_m b:=(a\,b)\bmod m.$$
 
-Then $(\mathbb{Z}_m, +_m, \cdot_m)$ is a **commutative ring with unity**.
+Then $(\mathbb{Z}_m,+_m,\cdot_m)$ is a **commutative ring with unity**.
 
-- **Key Properties.**
-  - Closure, associativity, commutativity of $+_m$ and $\cdot_m$.
-  - Identities: $0$ for $+_m$, $1$ for $\cdot_m$.
-  - Additive inverse of $a$ is $m - a$.
-  - Distributivity of $\cdot_m$ over $+_m$.
-  - **Remark:** A multiplicative inverse of $a$ exists in $\mathbb{Z}_m$ precisely when $\gcd(a,m)=1$.
+- **Key Properties.**  
+  • Closure, associativity, commutativity of $+_m,\cdot_m$.  
+  • Identities: $0$ for $+_m$, $1$ for $\cdot_m$.  
+  • Additive inverse of $a$ is $m-a$.  
+  • Distributivity of $\cdot_m$ over $+_m$.  
+  • Multiplicative inverse exists precisely when $\gcd(a,m)=1$.
