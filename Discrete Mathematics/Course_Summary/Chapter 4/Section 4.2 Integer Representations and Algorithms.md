@@ -1,59 +1,87 @@
-## 4.2.1 Base-\(b\) Expansions
+## 4.2.1 Base-$b$ Expansions
 
-**Theorem 4.2.1 (Uniqueness of Base-\(b\) Expansion)**
+**Theorem 4.2.1 (Uniqueness of Base-$b$ Expansion).**
 
-Let \(b>1\) be an integer. Every positive integer \(n\) admits a unique expansion
-
-$$
-n = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0,
-$$
-
-where each digit \(a_i\in\{0,1,\dots,b-1\}\) and \(a_k\neq0\). We denote this by
+Let $b>1$ be a fixed integer. Then every positive integer $n$ admits a *unique* expansion of the form
 
 $$
-n = (a_k a_{k-1} \dots a_1 a_0)_b.
+ n
+ = a_k b^k + a_{k-1} b^{k-1} + \cdots + a_1 b + a_0,
 $$
 
-- **Special bases.**  
-  - **Binary** (\(b=2\)): digits \(\{0,1\}\).  
-  - **Octal** (\(b=8\)): digits \(\{0,\dots,7\}\).  
-  - **Hexadecimal** (\(b=16\)): digits \(\{0,\dots,9,A,\dots,F\}\), where \(A=10,\dots,F=15\).
+where
 
-**Example.**  
-$$(10101111)_2 = 1\cdot2^7 + 0\cdot2^6 + 1\cdot2^5 + \cdots + 1\cdot2^0 = 175.$$
+* each digit $a_i \in \{0,1,\dots,b-1\}$,
+* the leading digit $a_k \neq 0$.
+
+We denote this expansion compactly as
+
+$$
+ n = (a_k a_{k-1} \dots a_1 a_0)_b.
+$$
+
+**Special bases.**
+
+* **Binary** ($b = 2$): digits $\{0,1\}$.
+* **Octal** ($b = 8$): digits $\{0,1,\dots,7\}$.
+* **Hexadecimal** ($b = 16$): digits $\{0,1,\dots,9,A,\dots,F\}$, where $A=10,\dots,F=15$.
+
+**Example.**
+
+Consider the binary expansion
+
+$$
+(10101111)_2 = 1\cdot2^7 + 0\cdot2^6 + 1\cdot2^5 + 0\cdot2^4 + 1\cdot2^3 + 1\cdot2^2 + 1\cdot2^1 + 1\cdot2^0 = 175.
+$$
 
 ---
 
 ## 4.2.2 Base Conversion Algorithm
 
-**Procedure 4.2.2**
+**Procedure 4.2.2 (Conversion to Base-$b$).**  Given $n \in \mathbb{N}$ and base $b > 1$, compute its base-$b$ digits as follows:
 
-To compute the base-\(b\) digits of \(n\in\mathbb{N}\):
+1. **Initialization:**
 
-1. Set  
-   $$q := n,\quad k := 0.$$
-2. While \(q \neq 0\):  
-   $$a_k := q \bmod b,\quad
-   q   := \big\lfloor \tfrac{q}{b}\big\rfloor,\quad
-   k   := k + 1.$$
-3. Then the digits are \((a_{k-1},\dots,a_0)\), giving \((a_{k-1}\dots a_0)_b\).
+   $$
+     q \leftarrow n, \quad k \leftarrow 0.
+   $$
+2. **Iteration:**
+   While $q \neq 0$:
 
-**Example.**  
-Convert \(12345_{10}\) to octal (\(b=8\)):
+   $$
+     a_k \leftarrow q \bmod b,
+     \quad q \leftarrow \left\lfloor \frac{q}{b} \right\rfloor,
+     \quad k \leftarrow k + 1.
+   $$
+3. **Result:** The digits of $n$ in base $b$ are
+
+   $$
+     (a_{k-1}, a_{k-2}, \dots, a_1, a_0),
+   $$
+
+   giving
+
+   $$
+     n = (a_{k-1} a_{k-2} \dots a_1 a_0)_b.
+   $$
+
+**Example.** Convert $12345_{10}$ to octal ($b = 8$). We perform successive divisions:
+
+\begin{align\*}
+12345 &= 8 \times 1543 + 1,\\
+1543  &= 8 \times 192  + 7,\\
+192   &= 8 \times 24   + 0,\\
+24    &= 8 \times 3    + 0,\\
+3     &= 8 \times 0    + 3.
+\end{align\*}
+
+Reading the remainders from bottom to top yields
 
 $$
-\begin{aligned}
-12345 &= 8\cdot1543 + 1,\\
-1543  &= 8\cdot192  + 7,\\
-192   &= 8\cdot24   + 0,\\
-24    &= 8\cdot3    + 0,\\
-3     &= 8\cdot0    + 3.
-\end{aligned}
+12345_{10} = (30071)_8.
 $$
 
-The remainders read bottom‐up give \((30071)_8\).
-
-> **Remark.** To convert binary ↔ octal or hex, group binary digits in blocks of 3 (octal) or 4 (hex), padding with leading zeros.
+> **Remark.** To convert efficiently between binary and octal (or hexadecimal), group binary digits in blocks of 3 (for octal) or 4 (for hexadecimal), padding with leading zeros if necessary.
 
 ---
 
@@ -61,57 +89,69 @@ The remainders read bottom‐up give \((30071)_8\).
 
 ### 4.2.3.1 Binary Addition
 
-**Procedure 4.2.3**
+**Procedure 4.2.3 (Addition of Two $n$-Bit Binaries).**
 
-Given two \(n\)-bit binary numbers:
+Let
 
+$$
+ a = (a_{n-1} \dots a_1 a_0)_2,
+ \quad
+ b = (b_{n-1} \dots b_1 b_0)_2.
+$$
 
-  $$a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2$$
+We compute the sum $s = a + b$ with carry propagation:
 
-compute their sum \(s = (s_n s_{n-1}\dots s_0)_2\):
+1. Initialize $c \leftarrow 0$ (carry).
+2. For $j = 0, 1, \dots, n-1$:
+   \begin{align\*}
+   d   &= \left\lfloor \frac{a\_j + b\_j + c}{2} \right\rfloor,\\
+   s\_j &= (a\_j + b\_j + c) - 2d,\\
+   c   &= d.
+   \end{align\*}
+3. Set the final bit $s_n \leftarrow c$.
 
-1. Initialize carry \(c := 0\).  
-2. For \(j=0,1,\dots,n-1\):  
-   $$\begin{aligned}
-   d   &:= \left\lfloor\frac{a_j + b_j + c}{2}\right\rfloor,\\
-   s_j &:= (a_j + b_j + c) - 2\,d,\\
-   c   &:= d.
-   \end{aligned}$$
-3. Set \(s_n := c\).
+Thus the result is $s = (s_n s_{n-1} \dots s_0)_2$.
 
-> **Complexity:** \(O(n)\) bit-additions.
+> **Time complexity:** $O(n)$ bit-operations.
 
 ---
 
 ### 4.2.3.2 Binary Multiplication
 
-**Procedure 4.2.4**
+**Procedure 4.2.4 (Schoolbook Multiplication).**  Given two $n$-bit integers $a$ and $b$:
 
-To multiply two \(n\)-bit integers \(a\) and \(b\):
+1. For each bit index $j = 0,1,\dots,n-1$, form the partial product:
 
-1. For each \(j=0,1,\dots,n-1\), form the partial product  
-   $$c_j :=
-   \begin{cases}
-     a \ll j, & b_j = 1,\\
-     0,       & b_j = 0.
-   \end{cases}$$
-2. Sum all \(c_j\) to obtain the product.
+   $$
+     c_j = \begin{cases}
+       a \ll j, & b_j = 1,\
+       0,        & b_j = 0.
+     \end{cases}
+   $$
+2. Sum all $c_j$ (via binary addition) to produce the final product.
 
-> **Complexity:** \(O(n^2)\) bit-additions.
+> **Time complexity:** $O(n^2)$ bit-additions.
 
 ---
 
 ### 4.2.3.3 Binary Modular Exponentiation
 
-**Goal.** Compute \(b^n \bmod m\) efficiently.
+**Goal.** Efficiently compute $b^n \bmod m$.
 
-**Idea.** Write the exponent \(n\) in binary: \(n = (a_{k-1}\dots a_0)_2\). Then
+**Key idea.** Write the exponent $n$ in binary,
 
 $$
-b^n = b^{\sum_j a_j 2^j}
-    = \prod_{a_j=1} b^{2^j},
+ n = (a_{k-1} a_{k-2} \dots a_1 a_0)_2
+   = \sum_{j=0}^{k-1} a_j 2^j.
 $$
 
-reducing modulo \(m\) at each squaring and multiplication.
+Then
 
-> **Complexity:** \(O((\log m)^2 \log n)\) bit-operations.
+$$
+ b^n = b^{\sum_j a_j 2^j}
+      = \prod_{j: a_j = 1} b^{2^j},
+$$
+
+reducing modulo $m$ after each squaring and each multiplication.
+
+> **Time complexity:** $O((\log m)^2 \cdot \log n)$ bit-operations.
