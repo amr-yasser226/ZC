@@ -12,30 +12,22 @@ To prove that a property $P(n)$ holds for all integers $n \ge b$:
 2. **Inductive Step**
    Assume for some arbitrary $k \ge b$ that
 
-   $$
-   P(k)
-   $$
+   $$P(k)$$
 
    holds (this is the *inductive hypothesis*), and then prove
 
-   $$
-   P(k+1).
-   $$
+   $$P(k+1).$$
 
 3. **Conclusion**
    Having established
 
-   $$
-   P(b)
+   $$P(b)
    \quad\text{and}\quad
-   \forall k\ge b\,(P(k)\to P(k+1)),
-   $$
+   \forall k\ge b\,(P(k)\to P(k+1)),$$
 
    we conclude
 
-   $$
-   \forall n\ge b\,P(n).
-   $$
+   $$\forall n\ge b\,P(n).$$
 
 ---
 
@@ -45,16 +37,12 @@ To prove that a property $P(n)$ holds for all integers $n \ge b$:
 
 * **Inductive Hypothesis:** Assume
 
-  $$
-  P(1),\,P(2),\,\dots,\,P(k)
-  $$
+  $$P(1),\,P(2),\,\dots,\,P(k)$$
 
   all hold.
 * **Goal:** Prove
 
-  $$
-  P(k+1).
-  $$
+  $$P(k+1).$$
 
 ### 2.2 Well-Ordering Principle
 
