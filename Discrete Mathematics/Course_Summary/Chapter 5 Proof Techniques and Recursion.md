@@ -5,9 +5,7 @@ To prove that a property $P(n)$ holds for all integers $n \ge b$:
 1. **Basis Step**
    Show that
 
-   $$
-   P(b)
-   $$
+   $$P(b)$$
 
    is true.
 
