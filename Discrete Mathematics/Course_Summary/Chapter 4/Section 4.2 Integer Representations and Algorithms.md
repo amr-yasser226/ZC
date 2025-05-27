@@ -30,15 +30,13 @@ To compute the base-$b$ digits of $n\in\mathbb{N}$:
 
 **Example.**  
 Convert $12345_{10}$ to octal ($b=8$):
-$$
-\begin{aligned}
+$$\begin{aligned}
 12345&=8\cdot1543+1,\\
 1543&=8\cdot192+7,\\
 192&=8\cdot24+0,\\
 24&=8\cdot3+0,\\
 3&=8\cdot0+3.
-\end{aligned}
-$$
+\end{aligned}$$
 Remainders bottom‐up give $(30071)_8$.
 
 > **Remark.** To convert binary $\leftrightarrow$ octal or hex, group bits in blocks of 3 (octal) or 4 (hex), padding with leading zeros.
@@ -51,18 +49,16 @@ Remainders bottom‐up give $(30071)_8$.
 
 **Procedure 4.2.3**  
 Given two $n$-bit numbers  
-$$a=(a_{n-1}\dots a_0)_2,\quad b=(b_{n-1}\dots b_0)_2,$$  
+$$a=(a_{n-1}\dots a_0)_2,\quad b=(b_{n-1}\dots b_0)_2$$  
 compute their sum $s=(s_n s_{n-1}\dots s_0)_2$:
 
 1. Initialize carry $c:=0$.  
 2. For $j=0,\dots,n-1$:
-   $$
-   \begin{aligned}
+   $$\begin{aligned}
    d&=\Big\lfloor\tfrac{a_j+b_j+c}{2}\Big\rfloor,\\
    s_j&=(a_j+b_j+c)-2d,\\
    c&=d.
-   \end{aligned}
-   $$
+   \end{aligned}$$
 3. Set $s_n:=c$.
 
 > **Complexity:** $O(n)$ bit-adds.
@@ -75,13 +71,11 @@ compute their sum $s=(s_n s_{n-1}\dots s_0)_2$:
 To multiply two $n$-bit integers $a,b$:
 
 1. For each $j=0,\dots,n-1$, form
-   $$
-   c_j:=
+   $$c_j:=
    \begin{cases}
      a\ll j,&b_j=1,\\
      0,&b_j=0.
-   \end{cases}
-   $$
+   \end{cases}$$
 2. Sum the $c_j$ to get the product.
 
 > **Complexity:** $O(n^2)$ bit-adds.
@@ -92,8 +86,8 @@ To multiply two $n$-bit integers $a,b$:
 
 **Goal.** Compute $b^n\mod m$ efficiently.
 
-**Idea.** Write $n=(a_{k-1}\dots a_0)_2$. Then
-$$b^n=b^{\sum_j a_j2^j}=\prod_{a_j=1}b^{2^j},$$
+**Idea.** Write $n=(a_{k-1}\dots a_0)_2$ Then
+$$b^n=b^{\sum_j a_j2^j}=\prod_{a_j=1}b^{2^j}$$
 reducing mod $m$ after each square/multiply.
 
 > **Complexity:** $O((\log m)^2\log n)$ bit-ops.
