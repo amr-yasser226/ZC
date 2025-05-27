@@ -86,9 +86,9 @@ $$
 Let
 
 $$
- a = (a_{n-1} a_{n-2} \dots a_0)_2,
- \quad
- b = (b_{n-1} b_{n-2} \dots b_0)_2.
+a = (a_{n-1} a_{n-2} \dots a_0)_2,
+\quad
+b = (b_{n-1} b_{n-2} \dots b_0)_2.
 $$
 
 To compute $s = a + b$:
@@ -97,13 +97,13 @@ To compute $s = a + b$:
 
 2. For $j = 0,1,\dots,n-1$:
 
-   $$
-   \begin{aligned}
-   d   &= \left\lfloor \tfrac{a_j + b_j + c}{2} \right\rfloor,\\
-   s_j &= (a_j + b_j + c) - 2d,\\
-   c   &= d
-   \end{aligned}
-   $$
+$$
+\begin{aligned}
+d   &= \left\lfloor \tfrac{a_j + b_j + c}{2} \right\rfloor,\\
+s_j &= (a_j + b_j + c) - 2d,\\
+c   &= d
+\end{aligned}
+$$
 
 3. **Final bit:** $s_n \leftarrow c$.
 
@@ -117,12 +117,12 @@ Result: $s = (s_n s_{n-1}\dots s_0)_2$.
 
 1. For each $j=0,1,\dots,n-1$, form
 
-   $$
-   c_j = \begin{cases}
-     a \ll j, & b_j = 1,\\
-     0,        & b_j = 0.
-   \end{cases}
-   $$
+$$
+c_j = \begin{cases}
+ a \ll j, & b_j = 1,\\
+ 0,        & b_j = 0.
+\end{cases}
+$$
 
 2. Sum all partials $c_j$.
 
