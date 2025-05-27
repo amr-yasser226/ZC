@@ -1,6 +1,3 @@
-Here’s a “pure-Markdown + Unicode” version that will render nicely on GitHub—no LaTeX needed:
-
-````markdown
 # 4.2 Base – $b$ Expansions and Integer Algorithms
 
 ## 4.2.1 Base-$b$ Expansions
