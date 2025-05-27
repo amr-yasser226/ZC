@@ -2,41 +2,41 @@
 
 **Definition 4.1.1**
 
-Let \(a,b\in\mathbb{Z}\) with \(a\neq 0\). We say **“\(a\) divides \(b\)”**, written
+Let $a,b \in \mathbb{Z}$ with $a \neq 0$.  We say **“$a$ divides $b$”**, written
 
 $$
 a \mid b,
 $$
 
-if there exists \(c\in\mathbb{Z}\) such that
+if there exists $c \in \mathbb{Z}$ such that
 
 $$
 b = a\,c.
 $$
 
-- In that case, \(a\) is a **factor** (or **divisor**) of \(b\), and \(b\) is a **multiple** of \(a\).
-- If no such \(c\) exists, we write \(a\nmid b\).
+- In that case, $a$ is a **factor** (or **divisor**) of $b$, and $b$ is a **multiple** of $a$.
+- If no such $c$ exists, we write $a \nmid b$.
 - Equivalently,
 
 $$
 a \mid b
 \quad\Longleftrightarrow\quad
-\frac{b}{a}\in\mathbb{Z}.
+\frac{b}{a} \in \mathbb{Z}.
 $$
 
 ---
 
 **Theorem 4.1.2 (Basic Properties of Divisibility)**
 
-Let \(a,b,c\in\mathbb{Z}\) with \(a\neq 0\). Then:
+Let $a,b,c \in \mathbb{Z}$ with $a \neq 0$.  Then:
 
-1. If \(a\mid b\) and \(a\mid c\), then \(a\mid (b+c)\).
-2. If \(a\mid b\), then for any \(k\in\mathbb{Z}\), \(a\mid (b\,k)\).
-3. If \(a\mid b\) and \(b\mid c\), then \(a\mid c\).
+1. If $a \mid b$ and $a \mid c$, then $a \mid (b+c)$.
+2. If $a \mid b$, then for any $k\in\mathbb{Z}$,  $a \mid (b\,k)$.
+3. If $a \mid b$ and $b \mid c$, then $a \mid c$.
 
 **Corollary 4.1.3**
 
-If \(a\mid b\) and \(a\mid c\), then for all \(m,n\in\mathbb{Z}\),
+If $a \mid b$ and $a \mid c$, then for all $m,n\in\mathbb{Z}$,
 
 $$
 a \,\bigl\vert\, (m\,b + n\,c).
@@ -48,7 +48,7 @@ $$
 
 **Theorem 4.1.4 (Division Algorithm)**
 
-For any \(a\in\mathbb{Z}\) and any positive integer \(d\), there exist **unique** integers \(q\) (quotient) and \(r\) (remainder) such that
+For any $a\in\mathbb{Z}$ and any positive integer $d$, there exist **unique** integers $q$ (quotient) and $r$ (remainder) such that
 
 $$
 \begin{aligned}
@@ -65,12 +65,11 @@ q := \big\lfloor \tfrac{a}{d}\big\rfloor,
 r := a \bmod d,
 $$
 
-so that \(a = d\,q + r\) with \(0 \le r < d\).
+so that $a = d\,q + r$ with $0 \le r < d$.
 
-**Examples.**
-
-1. \(q = \lfloor 101/11\rfloor = 9,\quad r = 101\bmod 11 = 2\).  
-2. \(q = \lfloor(-11)/3\rfloor = -4,\quad r = (-11)\bmod 3 = 1\).
+**Examples.**  
+1. $q = \lfloor 101/11\rfloor = 9,\quad r = 101 \bmod 11 = 2$.  
+2. $q = \lfloor -11/3\rfloor = -4,\quad r = (-11) \bmod 3 = 1$.
 
 ---
 
@@ -80,7 +79,7 @@ so that \(a = d\,q + r\) with \(0 \le r < d\).
 
 **Definition 4.1.5**
 
-Let \(a,b\in\mathbb{Z}\) and \(m\in\mathbb{Z}^+\). We say
+Let $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$.  We say
 
 $$
 a \equiv b \pmod m
@@ -92,11 +91,11 @@ $$
 m \mid (a - b).
 $$
 
-Otherwise \(a\not\equiv b\pmod m\). Equivalently, \(a\) and \(b\) have the same remainder upon division by \(m\).
+Otherwise $a \not\equiv b \pmod m$.  Equivalently, $a$ and $b$ have the same remainder upon division by $m$.
 
 **Theorem 4.1.6 (Characterization)**
 
-\(a\equiv b\pmod m\) if and only if there exists \(k\in\mathbb{Z}\) such that
+$a \equiv b \pmod m$ if and only if there exists $k\in\mathbb{Z}$ such that
 
 $$
 a = b + k\,m.
@@ -104,12 +103,12 @@ $$
 
 **Theorem 4.1.7 (Remainder Characterization)**
 
-For \(a,b\in\mathbb{Z}\) and \(m\in\mathbb{Z}^+\),
+For $a,b\in\mathbb{Z}$ and $m\in\mathbb{Z}^+$,
 
 $$
 a\equiv b\pmod m
 \quad\Longleftrightarrow\quad
-(a\bmod m) = (b\bmod m).
+(a \bmod m) = (b \bmod m).
 $$
 
 ---
@@ -121,9 +120,9 @@ $$
 If
 
 $$
-a\equiv b\pmod m
+a \equiv b \pmod m
 \quad\text{and}\quad
-c\equiv d\pmod m,
+c \equiv d \pmod m,
 $$
 
 then
@@ -136,7 +135,7 @@ $$
 
 **Corollaries.**
 
-- For any \(k\in\mathbb{Z}\):
+- For any $k\in\mathbb{Z}$:
 
   $$
   k\,a \equiv k\,b \pmod m,
@@ -145,7 +144,7 @@ $$
   $$
 
 - **Caution:** Division is not generally valid.  
-  E.g.\ \(14\equiv 8\pmod6\) but dividing by 2 gives \(7\not\equiv 4\pmod6\).
+  E.g.\ $14\equiv8\pmod6$ but dividing by 2 gives $7\not\equiv4\pmod6$.
 
 **Computing Remainders.**
 
@@ -168,7 +167,7 @@ $$
 \mathbb{Z}_m := \{0,1,2,\dots,m-1\}.
 $$
 
-In \(\mathbb{Z}_m\), the two operations are usually written simply as
+In $\mathbb{Z}_m$, the two operations are usually written simply as
 
 $$
 a +_m b := (a + b)\bmod m,
@@ -176,11 +175,11 @@ a +_m b := (a + b)\bmod m,
 a \,\cdot_m\, b := (a\,b)\bmod m.
 $$
 
-Then \((\mathbb{Z}_m, +_m, \cdot_m)\) is a **commutative ring with unity**.
+Then $(\mathbb{Z}_m, +_m, \cdot_m)$ is a **commutative ring with unity**.
 
 - **Key Properties.**
-  - Closure, associativity, commutativity of \(+_m\) and \(\cdot_m\).
-  - Identities: \(0\) for \(+_m\), \(1\) for \(\cdot_m\).
-  - Additive inverse of \(a\) is \(m - a\).
-  - Distributivity of \(\cdot_m\) over \(+_m\).
-  - **Remark:** A multiplicative inverse of \(a\) exists in \(\mathbb{Z}_m\) precisely when \(\gcd(a,m)=1\).
+  - Closure, associativity, commutativity of $+_m$ and $\cdot_m$.
+  - Identities: $0$ for $+_m$, $1$ for $\cdot_m$.
+  - Additive inverse of $a$ is $m - a$.
+  - Distributivity of $\cdot_m$ over $+_m$.
+  - **Remark:** A multiplicative inverse of $a$ exists in $\mathbb{Z}_m$ precisely when $\gcd(a,m)=1$.
