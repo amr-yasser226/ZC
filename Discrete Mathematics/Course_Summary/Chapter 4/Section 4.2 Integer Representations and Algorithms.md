@@ -70,7 +70,7 @@ $$
 
 **Example.** Convert \(12345_{10}\) to octal (\(b=8\)).  We perform successive divisions:
 
-```latex
+```math
 \begin{aligned}
 12345 &= 8\cdot1543 + 1,\\
 1543  &= 8\cdot192  + 7,\\
