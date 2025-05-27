@@ -14,9 +14,11 @@
 
 ### Fundamental Theorem of Arithmetic
 Every integer $n>1$ has a unique factorization
-$$
-n = p_1^{e_1}\,p_2^{e_2}\,\cdots\,p_k^{e_k},
-$$
+
+
+$$n = p_1^{e_1}\,p_2^{e_2}\,\cdots\,p_k^{e_k},$$
+
+
 
 $$
 p_1 < p_2 < \cdots < p_k,\; e_i\ge1.
