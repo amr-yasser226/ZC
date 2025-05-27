@@ -2,7 +2,7 @@
 
 **Definition 4.1.1**
 
-Let $a,b \in \mathbb{Z}$ with $a \neq 0$.  We say **“$a$ divides $b$”**, written
+Let $a,b \in \mathbb{Z}$ with $a \neq 0$.  We say **$a$ divides $b$**, written
 
 $$
 a \mid b,
@@ -119,39 +119,25 @@ $$
 
 If
 
-$$
-a \equiv b \pmod m
-\quad\text{and}\quad
-c \equiv d \pmod m,
-$$
+$$a\equiv b\pmod m\quad\text{and}\quad c\equiv d\pmod m,$$
 
 then
 
-$$
-a + c \equiv b + d \pmod m,
-\qquad
-a\,c \equiv b\,d \pmod m.
-$$
+$$a+c\equiv b+d\pmod m,\quad a\,c\equiv b\,d\pmod m.$$
 
 **Corollaries.**
 
-- For any $k\in\mathbb{Z}$:
-
-  $$
-  k\,a \equiv k\,b \pmod m,
-  \quad
-  a + k \equiv b + k \pmod m.
-  $$
-
-- **Caution:** Division is not generally valid.  
-  E.g.\ $14\equiv8\pmod6$ but dividing by 2 gives $7\not\equiv4\pmod6$.
+- For any $k\in\mathbb{Z}$:  
+  $$k\,a\equiv k\,b\pmod m,\quad a+k\equiv b+k\pmod m.$$
+- **Caution:** Division is not generally valid; e.g.  
+  $14\equiv8\pmod6$ but dividing by 2 gives $7\not\equiv4\pmod6$.
 
 **Computing Remainders.**
 
 $$
 \begin{aligned}
-(a+b)\bmod m &= \bigl[(a\bmod m)+(b\bmod m)\bigr]\bmod m,\\
-(a\,b)\bmod m &= \bigl[(a\bmod m)\,(b\bmod m)\bigr]\bmod m.
+(a+b)\bmod m&=\bigl[(a\bmod m)+(b\bmod m)\bigr]\bmod m,\\
+(a\,b)\bmod m&=\bigl[(a\bmod m)\,(b\bmod m)\bigr]\bmod m.
 \end{aligned}
 $$
 
