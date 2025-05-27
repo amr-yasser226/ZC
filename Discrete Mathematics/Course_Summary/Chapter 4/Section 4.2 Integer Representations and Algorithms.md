@@ -1,6 +1,6 @@
-## 4.2.1 Base-$b$ Expansions
+## 4.2.1 Base - $b$ Expansions
 
-**Theorem 4.2.1 (Uniqueness of Base-$b$ Expansion).**
+**Theorem 4.2.1 (Uniqueness of Base - $b$ Expansion).**
 
 Let $b>1$ be a fixed integer. Then every positive integer $n$ admits a *unique* expansion:
 
@@ -30,7 +30,7 @@ $$
 
 ## 4.2.2 Base Conversion Algorithm
 
-**Procedure 4.2.2 (Conversion to Base-$b$).** Given $n\in\mathbb{N}$ and $b>1$, compute its base-$b$ representation.
+**Procedure 4.2.2 (Conversion to Base - $b$).** Given $n\in\mathbb{N}$ and $b>1$, compute its base - $b$ representation.
 
 1. **Initialize**
 
