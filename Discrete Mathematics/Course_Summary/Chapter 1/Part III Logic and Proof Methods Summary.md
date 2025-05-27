@@ -162,18 +162,25 @@ Let $p,q$ be statements.
 
 ## V. Common Definitions & Examples
 
-1. **Even/Odd Integers**
+1. **Even / Odd Integers**
 
    ```math
-   n	ext{ even}  \iff ∃k∈ℤ: n=2k,
-   \quad
-   n	ext{ odd}   \iff ∃k∈ℤ: n=2k+1.
-   ```
+   \[
+   \begin{aligned}
+   n\text{ is even}
+   &\iff \exists\,k\in\mathbb{Z}:\;n = 2k,\\
+   n\text{ is odd}
+   &\iff \exists\,k\in\mathbb{Z}:\;n = 2k + 1.
+   \end{aligned}
+   \]
 
 2. **Rational Numbers**
 
    ```math
-   r∈ℝ	ext{ rational} \iff ∃p,q∈ℤ, q≠0: r = \frac{p}{q}.
+   \[
+   r\in\mathbb{R}\text{ is rational}
+   \iff \exists\,p,q\in\mathbb{Z},\;q\neq0:\;r = \frac{p}{q}.
+   \]
    ```
 
 3. **Biconditional Proof**
