@@ -30,7 +30,8 @@ $$f^{-1}(c) = (c - 3) \bmod 26.$$
 - **Decryption**: $f_k^{-1}(c) = (c - k) \bmod 26.$
 
 **Example**: Encrypt “MEET” $(12,4,4,19)$ with $k=3$:
-$$ (12+3,\;4+3,\;4+3,\;19+3) \bmod 26 = (15,7,7,22) \to \text{"PHHW"}. $$
+
+$$(12+3,\;4+3,\;4+3,\;19+3) \bmod 26 = (15,7,7,22) \to \text{"PHHW"}.$$
 
 
 <!-- File: 3_Affine_Cipher.md -->
