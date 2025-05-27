@@ -63,9 +63,10 @@ The remainders read bottom‐up give \((30071)_8\).
 
 **Procedure 4.2.3**
 
-Given two \(n\)-bit binary numbers
+Given two \(n\)-bit binary numbers:
 
-$$a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2,$$
+
+  $$a = (a_{n-1}\dots a_0)_2,\quad b = (b_{n-1}\dots b_0)_2,$$
 
 compute their sum \(s = (s_n s_{n-1}\dots s_0)_2\):
 
