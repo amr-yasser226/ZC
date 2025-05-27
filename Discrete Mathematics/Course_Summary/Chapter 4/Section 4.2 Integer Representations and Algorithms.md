@@ -38,42 +38,47 @@ $$
 
 ## 4.2.2 Base Conversion Algorithm
 
-**Procedure 4.2.2 (Conversion to Base-$b$).**  Given $n \in \mathbb{N}$ and base $b > 1$, compute its base-$b$ digits as follows:
+**Procedure 4.2.2 (Conversion to Base-\(b\)).**  Given \(n\in\mathbb{N}\) and base \(b>1\), compute its base-\(b\) digits as follows:
 
 1. **Initialization:**
 
-   $$
-     q \leftarrow n, \quad k \leftarrow 0.
-   $$
-2. **Iteration:**
-   While $q \neq 0$:
+    $$
+    q \leftarrow n, \quad k \leftarrow 0.
+    $$
 
-   $$
-     a_k \leftarrow q \bmod b,
-     \quad q \leftarrow \left\lfloor \frac{q}{b} \right\rfloor,
-     \quad k \leftarrow k + 1.
-   $$
-3. **Result:** The digits of $n$ in base $b$ are
+2. **Iteration:** While \(q \neq 0\):
 
-   $$
-     (a_{k-1}, a_{k-2}, \dots, a_1, a_0),
-   $$
+    $$
+    \begin{aligned}
+      a_k &\leftarrow q \bmod b,\\
+      q   &\leftarrow \left\lfloor \tfrac{q}{b} \right\rfloor,\\
+      k   &\leftarrow k + 1.
+    \end{aligned}
+    $$
 
-   giving
+3. **Result:** The digits of \(n\) in base \(b\) are
 
-   $$
-     n = (a_{k-1} a_{k-2} \dots a_1 a_0)_b.
-   $$
+    $$
+    (a_{k-1},\,a_{k-2},\,\dots,\,a_1,\,a_0),
+    $$
 
-**Example.** Convert $12345_{10}$ to octal ($b = 8$). We perform successive divisions:
+    giving
 
-\begin{align\*}
-12345 &= 8 \times 1543 + 1,\\
-1543  &= 8 \times 192  + 7,\\
-192   &= 8 \times 24   + 0,\\
-24    &= 8 \times 3    + 0,\\
-3     &= 8 \times 0    + 3.
-\end{align\*}
+    $$
+    n = (a_{k-1}a_{k-2}\dots a_1a_0)_b.
+    $$
+
+**Example.** Convert \(12345_{10}\) to octal (\(b=8\)).  We perform successive divisions:
+
+```latex
+\begin{aligned}
+12345 &= 8\cdot1543 + 1,\\
+1543  &= 8\cdot192  + 7,\\
+192   &= 8\cdot24   + 0,\\
+24    &= 8\cdot3    + 0,\\
+3     &= 8\cdot0    + 3.
+\end{aligned}
+
 
 Reading the remainders from bottom to top yields
 
