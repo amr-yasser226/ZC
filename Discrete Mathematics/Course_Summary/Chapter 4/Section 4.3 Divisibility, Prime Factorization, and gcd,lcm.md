@@ -14,9 +14,14 @@
 
 ### Fundamental Theorem of Arithmetic
 Every integer $n>1$ has a unique factorization
+
+
+$$n = p_1^{e_1}\,p_2^{e_2}\,\cdots\,p_k^{e_k},$$
+
+
+
 $$
-n = p_1^{e_1}\,p_2^{e_2}\,\cdots\,p_k^{e_k},
-\quad p_1 < p_2 < \cdots < p_k,\; e_i\ge1.
+p_1 < p_2 < \cdots < p_k,\; e_i\ge1.
 $$
 
 ### Sieve of Eratosthenes
@@ -27,9 +32,11 @@ $$
 ### Infinitude of Primes (Euclid’s Proof)
 1. Assume finitely many primes $p_1,\dots,p_n$.  
 2. Let  
-   $$
-   Q = p_1p_2\cdots p_n + 1.
-   $$
+
+$$
+Q = p_1p_2\cdots p_n + 1.
+$$
+
 3. No $p_i$ divides $Q$ (each leaves remainder $1$), so $Q$ or one of its prime factors is new.  
 4. **Therefore**, there are infinitely many primes.
 
@@ -39,9 +46,12 @@ $$
 
 ### Definition
 For $a,b\in\mathbb{Z}$, not both zero,  
+
+$$\gcd(a,b) = \max\{d>0 : d\mid a;
+\text{and}\; d\mid b\}.
 $$
-\gcd(a,b) = \max\{d>0 : d\mid a \;\text{and}\; d\mid b\}.
-$$
+
+
 
 ### Relatively Prime
 $\gcd(a,b)=1$.  
@@ -49,8 +59,12 @@ Pairwise relatively prime: $\gcd(a_i,a_j)=1$ for all $i\neq j$.
 
 ### Via Prime Factorization
 If
+
+$$a = \prod_i p_i^{\alpha_i}$$
+
+
+
 $$
-a = \prod_i p_i^{\alpha_i},\quad
 b = \prod_i p_i^{\beta_i},
 $$
 then

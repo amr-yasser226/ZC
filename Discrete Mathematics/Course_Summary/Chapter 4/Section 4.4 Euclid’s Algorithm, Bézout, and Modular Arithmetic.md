@@ -39,9 +39,9 @@ If $gcd(a,b)=1$ and $a\mid bc$, then $a\mid c$.
 * **Inverse mod $m$:**
   An integer $bar a$ with
 
-  $$
-  \bar a\,a\equiv1\pmod m,
-  $$
+$$
+\bar a\,a\equiv1\pmod m,
+$$
 
   exists iff $gcd(a,m)=1$.
 
@@ -51,9 +51,10 @@ If $gcd(a,b)=1$ and $a\mid bc$, then $a\mid c$.
 2. If $d\nmid b$, no solution.
 3. Else divide through by $d$:
 
-   $$
-   (a/d)\,x \equiv (b/d)\pmod{m/d}.
-   $$
+$$
+(a/d)\,x \equiv (b/d)\pmod{m/d}.
+$$
+
 4. Find the inverse of $a/d$ mod $m/d$ and multiply both sides.
 
 ---
@@ -75,15 +76,16 @@ has a unique solution modulo $M=\prod\_{k=1}^n m\_k$.
 1. Let $M\_k = M/m\_k$.
 2. Find $y\_k$ with
 
-   $$
-   M_k\,y_k \equiv 1 \pmod{m_k}.
-   $$
+$$
+M_k\,y_k \equiv 1 \pmod{m_k}.
+$$
+
 3. Then
 
-   $$
-   x = \sum_{k=1}^n a_k\,M_k\,y_k
-   \quad(\bmod\,M).
-   $$
+$$
+x = \sum_{k=1}^n a_k\,M_k\,y_k
+\quad(\bmod\,M).
+$$
 
 ---
 
@@ -103,17 +105,17 @@ $$
 
 * **$a$-pseudoprime:** Composite $n$ satisfying
 
-  $$
-  a^{n-1}\equiv1\pmod n.
-  $$
+$$
+a^{n-1}\equiv1\pmod n.
+$$
 
 * **Primitive root mod $p$:** An integer $g$ whose powers generate all nonzero residues mod $p$; its order is $p-1$.
 
 * **Discrete logarithm:** For prime $p$ and primitive root $g$, every $a\not\equiv0\pmod p$ can be written
 
-  $$
-  a\equiv g^k\pmod p,
-  $$
+$$
+a\equiv g^k\pmod p,
+$$
 
   where $k=\log\_g(a)\pmod{p-1}$.
 

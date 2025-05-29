@@ -162,19 +162,24 @@ Let $p,q$ be statements.
 
 ## V. Common Definitions & Examples
 
-1. **Even/Odd Integers**
+1. **Even / Odd Integers**
 
-   ```math
-   n	ext{ even}  \iff ∃k∈ℤ: n=2k,
-   \quad
-   n	ext{ odd}   \iff ∃k∈ℤ: n=2k+1.
-   ```
+**Definition.**  
+An integer _n_ is called **even** if there exists an integer _k_ such that _n = 2k_, and **odd** if there exists an integer _k_ such that _n = 2k + 1_.
+
+```text
+n is even  ⇔  ∃ k ∈ ℤ: n = 2k
+n is odd   ⇔  ∃ k 
+```
 
 2. **Rational Numbers**
 
-   ```math
-   r∈ℝ	ext{ rational} \iff ∃p,q∈ℤ, q≠0: r = \frac{p}{q}.
-   ```
+**Definition.**
+A real number r is rational if there exist integers p and q (with q ≠ 0) such that r = p/q.
+
+```text
+r ∈ ℝ is rational  ⇔  ∃ p, q ∈ ℤ, q ≠ 0: r = p/q
+```
 
 3. **Biconditional Proof**
    To show $p↔q$, prove both $p→q$ and $q→p$.
