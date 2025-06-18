@@ -22,7 +22,3 @@ Feel free to explore the folders and files to see the work I've done!
 ---
 
 If you're interested in my work or have any questions, feel free to reach out.
-
-### Contact:
-- Email: [s-amr.anwar@zewailcity.edu.eg]
-- LinkedIn: [www.linkedin.com/in/amr-yasser-1027542a4]
