@@ -1,0 +1,69 @@
+﻿@page
+@model StudentModel
+@{
+    ViewData["Title"] = "Student Page";
+    var currentTime = DateTime.Now;
+}
+
+<h1 class="text-center my-4">@ViewData["Title"]</h1>
+
+<p class="text-center">The current time is: @currentTime</p>
+
+<h2 class="my-4">Student Names and IDs</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Students.GetLength(0); i++)
+        {
+            <tr>
+                <td>@Model.Students[i, 0]</td>
+                <td>@Model.Students[i, 1]</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="my-4">Student IDs and Grades</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Grades.GetLength(0); i++)
+        {
+            <tr>
+                <td>@Model.Grades[i, 0]</td>
+                <td>@Model.Grades[i, 1]</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="my-4">Student Name, ID, and Grade</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Students.GetLength(0); i++)
+        {
+            <tr>
+                <td>@Model.Students[i, 0]</td>
+                <td>@Model.Students[i, 1]</td>
+                <td>@Model.GetGradeForStudent(Model.Students[i, 1])</td>
+            </tr>
+        }
+    </tbody>
+</table>
