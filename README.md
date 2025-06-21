@@ -8,15 +8,6 @@ This repository contains all the tasks, projects, and code that I have worked on
 
 It is organized by courses, and each course folder contains related assignments, projects, and any other work associated with that course.
 
-## Courses and Content
-
-Here are the main courses included in this repository:
-
-- **Data Structures**: Includes all the code and assignments related to data structures.
-- **Data Visualization Integration**: Contains projects and assignments focusing on data visualization techniques.
-- **Database Labs**: Tasks and projects related to database systems.
-- **Other Courses**: Additional courses will be added as I progress through my studies.
-
 Feel free to explore the folders and files to see the work I've done!
 
 ---
