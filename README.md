@@ -1,10 +1,10 @@
-# ZC University Tasks Repository
+# Zewail City, University of Science and Technology Tasks Repository
 
 <div align="center">
     <img src="https://theigclub.com/wp-content/uploads/2022/07/Zewail-City.png" alt="Zewail City University Logo" width="300">
 </div>
 
-This repository contains all the tasks, projects, and code that I have worked on during my time at **Zewail City University**. 
+This repository contains all the tasks, projects, and code that I have worked on during my time at **Zewail City**. 
 
 It is organized by courses, and each course folder contains related assignments, projects, and any other work associated with that course.
 
