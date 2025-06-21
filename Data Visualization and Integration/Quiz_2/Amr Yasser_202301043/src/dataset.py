@@ -8,4 +8,3 @@ def get_data():
 def clean(df):
     df['Year'] = df['Year'].fillna("Unknown").astype(str)
     df['Publisher'] = df['Publisher'].fillna("Unknown")
-    return df
