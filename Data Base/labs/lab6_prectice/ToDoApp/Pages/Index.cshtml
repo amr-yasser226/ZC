@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Task List";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-3">Task List</h1>
+    <a class="btn btn-primary mb-3" asp-page="Create">Add New Task</a>
+
+    @if (IndexModel.Tasks.Count == 0)
+    {
+        <p class="text-muted">No tasks available.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var task in IndexModel.Tasks)
+                {
+                    <tr>
+                        <td>@task.Title</td>
+                        <td>@(task.IsCompleted ? "Completed" : "Pending")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

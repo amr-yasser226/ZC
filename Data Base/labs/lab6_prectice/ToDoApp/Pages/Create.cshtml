@@ -1,0 +1,22 @@
+﻿@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create Task";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-3">Create Task</h1>
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="Title" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="Title" name="NewTask.Title" required />
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="IsCompleted" name="NewTask.IsCompleted" />
+            <label class="form-check-label" for="IsCompleted">Is Completed</label>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a class="btn btn-secondary" asp-page="Index">Cancel</a>
+    </form>
+</div>
